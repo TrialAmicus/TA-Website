@@ -35,7 +35,6 @@ This repository should NOT contain:
 
 ## Notes
 This repo is intentionally separated from the product application so that marketing changes and product changes can be developed and deployed independently.
-2. trialamicus-app
-Repo purpose
+
 
 
