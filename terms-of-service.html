@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Terms of Service | TrialAmicus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --teal: #3b82f6;
+    --teal-light: #60a5fa;
+    --teal-glow: rgba(59, 130, 246, 0.15);
+    --white: #f8fafc;
+    --white-dim: rgba(248,250,252,0.7);
+    --border: rgba(59, 130, 246, 0.25);
+    --border-subtle: rgba(248,250,252,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+    height: 85px;
+    background: rgba(10, 22, 40, 0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-logo { display: flex; align-items: center; text-decoration: none; line-height: 0; }
+  .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; white-space: nowrap; }
+  .nav-links a { color: var(--white-dim); text-decoration: none; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.02em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { background: linear-gradient(135deg, var(--teal), #2563eb); color: var(--white) !important; padding: 9px 22px !important; border-radius: 6px; font-weight: 500 !important; }
+
+  .page-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 140px 5vw 100px;
+  }
+
+  .page-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  h1 em { font-style: italic; color: var(--teal-light); }
+
+  .last-updated {
+    font-size: 0.82rem;
+    color: var(--white-dim);
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .intro-box {
+    background: var(--teal-glow);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    font-size: 0.95rem;
+    color: var(--white-dim);
+    line-height: 1.75;
+  }
+
+  .intro-box strong { color: var(--white); }
+
+  h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-top: 48px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  h3 { font-size: 0.95rem; font-weight: 600; color: var(--white); margin-top: 24px; margin-bottom: 8px; }
+
+  p { font-size: 0.95rem; color: var(--white-dim); line-height: 1.8; margin-bottom: 16px; }
+
+  ul { margin: 12px 0 16px 20px; display: flex; flex-direction: column; gap: 8px; }
+  ul li { font-size: 0.95rem; color: var(--white-dim); line-height: 1.7; }
+  ul li::marker { color: var(--teal); }
+
+  strong { color: var(--white); font-weight: 500; }
+
+  .warning-box {
+    background: rgba(201, 168, 76, 0.08);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    font-size: 0.9rem;
+    color: rgba(248,250,252,0.7);
+    line-height: 1.75;
+  }
+
+  .warning-box strong { color: #e8c97a; }
+
+  .contact-box {
+    background: var(--navy-mid);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-top: 48px;
+  }
+
+  .contact-box h3 { margin-top: 0; }
+  .contact-box a { color: var(--teal-light); text-decoration: none; transition: opacity 0.2s; }
+  .contact-box a:hover { opacity: 0.8; }
+
+  footer {
+    background: var(--navy-mid);
+    border-top: 1px solid var(--border-subtle);
+    padding: 36px 5vw;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer p { font-size: 0.8rem; color: rgba(248,250,252,0.3); }
+  .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.82rem; color: var(--white-dim); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--white); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg height="63" viewBox="0 0 320 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="TrialAmicus">
+      <rect x="0" y="2" width="18" height="18" rx="2" fill="#4BB8F5"/>
+      <rect x="20" y="2" width="18" height="18" rx="2" fill="#2E7DD1"/>
+      <rect x="10" y="24" width="18" height="18" rx="2" fill="#5B5FD8"/>
+      <text y="34" font-family="DM Sans, sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5"><tspan x="50" fill="#60B8F5">Trial</tspan><tspan fill="#F0F6FF">Amicus</tspan></text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#how-it-works">How It Works</a></li>
+    <li><a href="index.html#security">Security</a></li>
+    <li><a href="vreg.html">V-Reg</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrapper">
+  <span class="page-eyebrow">Legal</span>
+  <h1>Terms of <em>Service</em></h1>
+  <p class="last-updated">Last updated: April 1, 2026</p>
+
+  <div class="intro-box">
+    <strong>Please read these Terms of Service carefully before using the TrialAmicus platform.</strong> By accessing or using our services, you agree to be bound by these terms. If you do not agree to these terms, you may not use our platform.
+  </div>
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>These Terms of Service ("Terms") constitute a legally binding agreement between you and TrialAmicus ("Company," "we," "our," or "us") governing your access to and use of the TrialAmicus platform, website, and related services (collectively, the "Services").</p>
+  <p>By creating an account, accessing the platform, or using any of our Services, you represent that you have read, understood, and agree to be bound by these Terms and our Privacy Policy.</p>
+
+  <h2>2. Description of Services</h2>
+  <p>TrialAmicus provides an AI-powered clinical trial intelligence platform that assists clinical research professionals in interpreting and executing clinical trial protocols. Our Services include:</p>
+  <ul>
+    <li>AI-powered protocol question and answer capabilities</li>
+    <li>Document ingestion, indexing, and management tools</li>
+    <li>Role-based access control and team management features</li>
+    <li>Audit trail and compliance logging tools</li>
+    <li>The TrialAmicus V-Reg regulatory distribution platform (when available)</li>
+  </ul>
+
+  <div class="warning-box">
+    <strong>Important Notice:</strong> TrialAmicus is a decision-support tool designed to assist qualified clinical research professionals. It is not a substitute for professional medical judgment, regulatory expertise, or sponsor guidance. All clinical decisions must be made by appropriately qualified individuals in accordance with applicable regulations and study protocols.
+  </div>
+
+  <h2>3. Eligibility and Account Registration</h2>
+  <h3>3.1 Eligibility</h3>
+  <p>You must be at least 18 years of age and have the legal authority to enter into these Terms on behalf of yourself or your organization. Our Services are intended for use by clinical research professionals, including clinical research coordinators, clinical research associates, principal investigators, study managers, and sponsor/CRO personnel.</p>
+
+  <h3>3.2 Account Registration</h3>
+  <p>To access certain features of our Services, you must create an account. You agree to:</p>
+  <ul>
+    <li>Provide accurate, complete, and current information during registration</li>
+    <li>Maintain and promptly update your account information</li>
+    <li>Keep your login credentials confidential and secure</li>
+    <li>Notify us immediately of any unauthorized access to your account</li>
+    <li>Accept responsibility for all activities that occur under your account</li>
+  </ul>
+
+  <h2>4. Acceptable Use</h2>
+  <h3>4.1 Permitted Use</h3>
+  <p>You may use our Services solely for legitimate clinical research purposes in accordance with these Terms and all applicable laws and regulations, including but not limited to ICH E6 Good Clinical Practice guidelines, 21 CFR Parts 11, 50, 54, 56, and 312, and applicable data protection laws.</p>
+
+  <h3>4.2 Prohibited Use</h3>
+  <p>You agree not to:</p>
+  <ul>
+    <li>Use the Services for any unlawful purpose or in violation of applicable regulations</li>
+    <li>Upload documents or data you are not authorized to share</li>
+    <li>Attempt to reverse engineer, decompile, or disassemble the platform</li>
+    <li>Share your account credentials with unauthorized individuals</li>
+    <li>Use the Services to process data beyond the scope of your authorized study activities</li>
+    <li>Introduce malware, viruses, or other malicious code into the platform</li>
+    <li>Attempt to gain unauthorized access to other users' accounts or data</li>
+    <li>Use automated tools to scrape, crawl, or extract data from the platform</li>
+  </ul>
+
+  <h2>5. Data and Confidentiality</h2>
+  <h3>5.1 Your Data</h3>
+  <p>You retain ownership of all clinical trial documents and data you upload to the platform ("Customer Data"). By uploading data, you grant TrialAmicus a limited license to process that data solely for the purpose of providing the Services to you.</p>
+
+  <h3>5.2 Data Isolation</h3>
+  <p>Your Customer Data is stored in isolated environments and is never used to train shared AI models or shared with other organizations. We implement strict technical and organizational measures to ensure the confidentiality and integrity of your data.</p>
+
+  <h3>5.3 Confidentiality Obligations</h3>
+  <p>Both parties agree to maintain the confidentiality of the other party's proprietary information and to use such information only as permitted under these Terms or a separate written agreement.</p>
+
+  <h2>6. Intellectual Property</h2>
+  <p>The TrialAmicus platform, including its software, algorithms, user interface, and all related intellectual property, is owned by TrialAmicus and protected by applicable intellectual property laws. These Terms do not grant you any ownership rights in our platform or technology.</p>
+  <p>You retain all intellectual property rights in your Customer Data. By using our Services, you do not transfer any intellectual property rights to TrialAmicus.</p>
+
+  <h2>7. Fees and Payment</h2>
+  <p>Access to certain features of the TrialAmicus platform may require payment of subscription fees as set out in your order form or subscription agreement. All fees are:</p>
+  <ul>
+    <li>Due and payable in accordance with your subscription agreement</li>
+    <li>Non-refundable except as expressly stated in your agreement</li>
+    <li>Subject to change with reasonable advance notice</li>
+  </ul>
+
+  <h2>8. Disclaimers and Limitations of Liability</h2>
+  <h3>8.1 Disclaimer of Warranties</h3>
+  <p>THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TRIALAMICUS DOES NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, OR COMPLETELY SECURE.</p>
+
+  <h3>8.2 No Medical or Regulatory Advice</h3>
+  <p>The information provided through our Services is for informational and decision-support purposes only. TrialAmicus does not provide medical advice, regulatory guidance, or legal counsel. You are solely responsible for all clinical decisions made in connection with your use of the Services.</p>
+
+  <h3>8.3 Limitation of Liability</h3>
+  <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, TRIALAMICUS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+  <h2>9. Indemnification</h2>
+  <p>You agree to indemnify, defend, and hold harmless TrialAmicus and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, and expenses arising out of or related to your use of the Services, your violation of these Terms, or your violation of any applicable law or regulation.</p>
+
+  <h2>10. Term and Termination</h2>
+  <p>These Terms remain in effect for as long as you use our Services. We reserve the right to suspend or terminate your access to the Services at any time for:</p>
+  <ul>
+    <li>Violation of these Terms or applicable law</li>
+    <li>Non-payment of applicable fees</li>
+    <li>Conduct that we reasonably believe is harmful to other users, the platform, or our business</li>
+  </ul>
+  <p>Upon termination, your right to access the Services will immediately cease. Provisions of these Terms that by their nature should survive termination will remain in effect.</p>
+
+  <h2>11. Governing Law and Dispute Resolution</h2>
+  <p>These Terms shall be governed by and construed in accordance with the laws of the United States. Any disputes arising under these Terms shall first be attempted to be resolved through good-faith negotiation. If negotiation fails, disputes shall be submitted to binding arbitration in accordance with applicable arbitration rules.</p>
+
+  <h2>12. Changes to These Terms</h2>
+  <p>We reserve the right to modify these Terms at any time. We will provide notice of material changes by posting the updated Terms on our website and, where appropriate, by email notification. Your continued use of the Services after such changes constitutes your acceptance of the updated Terms.</p>
+
+  <div class="contact-box">
+    <h3>Questions About These Terms</h3>
+    <p>If you have any questions about these Terms of Service, please contact us:</p>
+    <p>Email: <a href="mailto:admin@trialamicus.io">admin@trialamicus.io</a><br>
+    Subject line: Terms of Service Inquiry</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-service.html">Terms of Service</a>
+    <a href="data-processing.html">Data Processing</a>
+  </div>
+  <p>© 2026 TrialAmicus. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
